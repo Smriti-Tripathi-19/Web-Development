@@ -1,0 +1,444 @@
+<html>
+
+<head>
+    <title>Intern Qualification test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/JavaScript" src="https://MomentJS.com/downloads/moment.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <style>
+        #imgbody {
+            display: flex;
+            flex-direction: row;
+            height: 10%;
+            justify-content: space-evenly;
+
+        }
+
+        #bigbody {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        #mainone {
+            margin-left: 25px;
+
+            margin-top: 5px;
+
+            width: 15%;
+
+            color: rgb(5, 5, 5);
+
+        }
+
+        #maintwo {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        #twocolumnone {
+            height: 18%;
+            background-color: lightgray;
+            border-radius: 30px 0px 0px 0px;
+        }
+
+
+        #twocolumntwo {
+            height: 50%;
+        }
+
+
+        a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .dot1 {
+            height: 25px;
+            width: 25px;
+            background-color: rgb(247, 14, 14);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot2 {
+            height: 25px;
+            width: 25px;
+            background-color: rgb(224, 247, 14);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot3 {
+            height: 25px;
+            width: 25px;
+            background-color: rgb(14, 247, 26);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot4 {
+            height: 10px;
+            width: 10px;
+            background-color: rgb(228, 14, 247);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .topnav a {
+            float: left;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: rgb(241, 234, 234);
+        }
+
+        .topnav a.active {
+            background-color: lightgray;
+            color: rgb(15, 14, 14);
+        }
+
+        #button1 {
+            border-radius: 8px;
+        }
+
+        #button2 {
+            border-radius: 8px;
+            background-color: gray;
+        }
+
+        #user {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        #userleft {
+            float: left;
+            width: 48%;
+        }
+
+        #userright {
+            float: right;
+            width: 30%;
+        }
+
+        #user3 {
+            width: 15%;
+        }
+
+        #mymap {
+            height: 180px;
+            width: 700px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="background-color:lightgray">
+        <span class="dot1"></span>
+        <span class="dot2"></span>
+        <span class="dot3"></span>
+    </div>
+    <br>
+
+
+    <div class="topnav">
+        <a class="dot4"></a>
+        <a href="">&nbsp&nbsp&nbspUNTITLED UI</a>
+        <a href="">Home</a>
+        <a class="active" href="">Dashboard</a>
+        <a href="">Projects</a>
+        <a href="">Tasks</a>
+        <a href="">Reporting</a>
+        <a href="">Users</a>
+    </div>
+    <h2>&nbsp&nbsp&nbsp&nbspSettings</h2>
+    <div id="bigbody">
+        <div id="mainone">
+            <p3>My Details</p3>
+            <br>
+            <br>
+            <p3>Profile</p3><br><br>
+            <p3>Password</p3><br><br>
+            <p3>Team</p3><br><br>
+            <p3>Plan</p3><br><br>
+            <p3>Billing</p3><br><br>
+            <p3>Email</p3><br><br>
+            <p3>Notifications</p3><br><br>
+            <p3>Integrations</p3><br><br>
+            <p3>API</p3>
+
+
+        </div>
+
+        <div id="maintwo">
+            <div id="twocolumnone">
+                <p style="width: 40%; float: left;">
+                    <br>
+                    <br>
+                    <br>
+                    &nbsp&nbsp&nbsp&nbspMY MAP LOCATION<br>
+                    <span id="latitude" style="display: none;"></span><br />
+                    <span id="longitude" style="display: none;"></span>
+                </p>
+                <p style="width: 60%; float: right;">
+                <div id="mymap"></div>
+                </p>
+            </div>
+            <br>
+           
+            <div id="imgbody">
+                <div id="newleft">
+                    <img src="" id="image" style="width:200px; border-radius:50%;
+                    border: 3px solid white;"></img>
+
+                </div>
+                <div id="newright">
+
+                    <h2>Your Name</h2>
+                    <h4>Update your photo and personal details</h4>
+                </div>
+                <div id="rightthree">
+
+                    <button id="button1">Cancel</button>
+                    &nbsp&nbsp
+                    <button id="button2">Save</button>
+                </div>
+            </div>
+            <hr>
+            <br>
+            
+            
+            <div id="twocolumntwo">
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Username </h3>
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <div id="username"></div>
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Save</button>
+
+                    </div>
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Website </h3>
+                    </div>
+                    <div id="userright">
+                        <br>
+
+                        <div style="border:rgb(17, 17, 17); border-width:2px; border-style:solid; border-radius: 5px;">
+                            http:// | www.untitledui.com</div>
+                    </div>
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Gender </h3>
+
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <div id="gender"></div>
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Edit</button>
+
+                    </div>
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Date Of Birth </h3>
+
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <div id="dob"></div>
+                    </div>
+                    <div id="user3">
+
+                    </div>
+
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Phone Number </h3>
+
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <div id="phone"></div>
+
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Edit</button>
+
+                    </div>
+
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Your Photo </h3>
+                        This will be displayed on your profile
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <img src="" id="image1" style="width:50px; border-radius:50%;"></img>
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Delete</button>
+                        &nbsp&nbsp
+                        <button id="button2">Update</button>
+
+                    </div>
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Address </h3>
+
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <textarea id="textarea" name="address" rows="4" cols="40">
+                            Add a short bio
+                        </textarea>
+
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Save</button>
+
+                    </div>
+
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Job Title </h3>
+
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <input type="text" name="" id="job"><br>
+                        <input type="checkbox" id="jobname" name="jobname" value="Product Designer">
+                        <label for="jobname">Show my job title in my profile</label><br>
+
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Save</button>
+
+                    </div>
+
+                </div>
+                <hr>
+                <div id="user">
+                    <div id="userleft">
+                        <h3>Alternative contact email</h3><br>
+                        Enter an alternative email if you'd like to be
+
+                    </div>
+                    <div id="userright">
+                        <br>
+                        <i class="material-icons" style="font-size:15px;">mail</i><input type="text" id="email" name="email" value="example@example.com">
+
+                    </div>
+                    <div id="user3">
+                        <br>
+                        <button id="button1">Save</button>
+
+                    </div>
+
+                </div>
+                <hr>
+
+            </div>
+        </div>
+        <script type="text/JavaScript">
+
+
+
+            getname();
+            async function getname() {
+                let url = "https://randomuser.me/api/";
+                let response = await fetch(url);
+                let data = await response.json();
+                document.getElementById("username").innerHTML = data.results[0].name.first;
+
+                let lat = data.results[0].location.coordinates.latitude;
+                let lon = data.results[0].location.coordinates.longitude;
+
+                document.getElementById("gender").innerHTML = data.results[0].gender;
+                document.getElementById("phone").innerHTML = data.results[0].phone;
+
+                document.getElementById('image').src = data.results[0].picture.large;
+                document.getElementById('image1').src = data.results[0].picture.thumbnail;
+
+                document.getElementById('latitude').textContent = lat;
+                document.getElementById('longitude').textContent = lon;
+
+                var mymap = L.map('mymap').setView([lat, lon], 15);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(mymap);
+                L.marker([lat, lon]).addTo(mymap).bindPopup('Your Location')
+                    .openPopup();
+
+                 let ndate=data.results[0].dob.date;
+                 var formatdate=moment(ndate).format("DD MMM YYYY");
+                 document.getElementById("dob").innerHTML = formatdate;
+            }
+
+
+
+
+        </script>
+
+</body>
+
+</html>
