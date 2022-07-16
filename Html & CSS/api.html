@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title>API VIEWER</title>
+    <style>
+        body
+        {
+            background-image: url("photo.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+           
+           
+        }
+        .page
+        {
+            margin: auto;
+    margin-top: 5%;
+    padding: 10px;
+    padding-top: 3%;
+    width: 60%;
+    height:75%;
+    border: 3px solid #694e4e;
+    background-color: rgb(144, 192, 214);
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgba(10, 10, 10, 0.12);
+    text-align: center;
+        }
+        #button
+        {
+            align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #efff5a 0, #e2ff3e 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(60, 66, 35, 0.4) 0 2px 4px,rgba(57, 66, 35, 0.3) 0 7px 13px -3px,rgba(103, 111, 58, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: rgb(17, 16, 16);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+        }
+        
+        #button:focus {
+  box-shadow: #bce03c 0 0 0 1.5px inset, rgba(193, 196, 64, 0.4) 0 2px 4px, rgba(66, 66, 35, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+#button:hover {
+  box-shadow: rgba(61, 66, 35, 0.4) 0 4px 8px, rgba(55, 66, 35, 0.3) 0 7px 13px -3px, #bce03c 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#button:active {
+  box-shadow: #dde03c 0 3px 7px inset;
+  transform: translateY(2px);
+}
+    </style>
+</head>
+<body>
+    <div class="page">
+    <h2><u>Are you Bored?</u></h2>
+    <button id="button" onclick="getact()">Click Me</button>
+    <br><br>
+    <b>Activity:</b><div id="act"></div>
+    <br>
+    <b>Type Of Activity:</b><div id="type"></div><hr>
+    <h2><u>Guess Your Age?</u></h2>
+    Enter Your Name<br><br>
+    <input type="text" name="" id="nameid"><br><br>
+    <button id="button" onclick="getage()">Click Me</button>
+    <br>
+    <br>
+    <b>Age:</b><div id="age"></div>
+</div>
+    
+    
+</body>
+<script>
+    
+    let url="https://www.boredapi.com/api/activity/";
+    async function getact()
+    {
+        let response= await fetch(url);
+        let data=await response.json();
+        document.getElementById("act").innerHTML=data.activity;
+        document.getElementById("type").innerHTML=data.type;
+    }
+    
+    
+    async function getage()
+    {
+        let input=document.getElementById("nameid").value;
+        let url2="https://api.agify.io?name="+input+"";
+        let response= await fetch(url2);
+        let data=await response.json();
+        document.getElementById("age").innerHTML=data.age;
+        
+    }
+    
+</script>
+</html>
